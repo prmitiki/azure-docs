@@ -51,11 +51,11 @@ The virtual router now also exposes the ability to peer with it, thereby exchang
    |---|---|
    |  Number of routes each BGP peer can advertise to the virtual hub.| The hub can only accept a maximum number of 10,000 routes (total) from its connected resources. For example, if a virtual hub has a total of 6000 routes from the connected virtual networks, branches, virtual hubs etc., then when a new BGP peering is configured with an NVA, the NVA can only advertise up to 4000 routes. |
 
-## About hub routing
+## BGP peering scenarios
 
 A virtual hub route table can contain one or more routes. A route includes its name, a label, a destination type, a list of destination prefixes, and next hop information for a packet to be routed. A connection typically will have a routing configuration that associates or propagates to a route table.
 
-## <a name="vnet-vnet"></a>VNet-to-VNet scenario
+## <a name="vnet-vnet"></a>Transit VNet connectivity
 
 :::image type="content" source="./media/scenario-bgp-peering-hub/vnet-vnet.png" alt-text="Graphic with VNet-to-VNet routing.":::
 
@@ -100,7 +100,7 @@ The table below shows few entries from Hub 1's effective routes in the defaultRo
 
 Configuring routing in this manner using the feature eliminates the need for static route entries on the virtual hub. Therefore, the configuration is simpler and route tables are updated dynamically when the configuration in connected virtual networks (like VNET5) changes.
 
-## <a name="branch-vnet"></a>Branch-to-VNet scenario
+## <a name="branch-vnet"></a>Branch VNet connectivity
 
 :::image type="content" source="./media/scenario-bgp-peering-hub/branch-vnet.png" alt-text="Graphic with Branch-to-VNet routing.":::
 
